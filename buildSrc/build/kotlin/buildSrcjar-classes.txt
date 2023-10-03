@@ -1,0 +1,1 @@
+/Users/alejandrogallegohenao/Documents/ANDROID/VideoGames/buildSrc/build/classes/kotlin/main/Dependencies$coreKtx$2.class:/Users/alejandrogallegohenao/Documents/ANDROID/VideoGames/buildSrc/build/classes/kotlin/main/Dependencies.class:/Users/alejandrogallegohenao/Documents/ANDROID/VideoGames/buildSrc/build/classes/kotlin/main/Versions.class
