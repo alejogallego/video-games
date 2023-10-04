@@ -1,6 +1,6 @@
 package co.videogames.di
 
-import co.videogames.data.repositorio.VideoGameRepository
+import co.videogames.data.repository.VideoGameRepository
 import co.videogames.domain.usecase.GetVideoGamesUseCase
 import dagger.Module
 import dagger.Provides
@@ -14,7 +14,7 @@ class ModuloCasosUso {
 
     @Singleton
     @Provides
-    fun provideGetVideoGamesUseCase(videoGameRepository:VideoGameRepository): GetVideoGamesUseCase {
+    fun provideGetVideoGamesUseCase(videoGameRepository: VideoGameRepository): GetVideoGamesUseCase {
         return GetVideoGamesUseCase(videoGameRepository)
     }
 

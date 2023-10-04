@@ -18,7 +18,7 @@ import co.videogames.utilities.VideoGameState
 @Composable
 fun HomeScreen(
     navController: NavHostController,
-    videoGames: VideoGameState<List<VideoGame>>) {
+    videoGames: VideoGameState<List<co.videogames.data.remote.response.VideoGame>>) {
     val context = LocalContext.current
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -62,7 +62,7 @@ fun HomeScreen(
 @Composable
 fun HomeScreenPreview() {
     val data = listOf(
-        VideoGame(
+        co.videogames.data.remote.response.VideoGame(
             id = 200,
             title = "Overwatch 2",
             thumbnail = "https://www.a.com",
@@ -72,7 +72,7 @@ fun HomeScreenPreview() {
             publisher = "Activision",
             releaseDate = "2022-10-04"
         ),
-        VideoGame(
+        co.videogames.data.remote.response.VideoGame(
             id = 400,
             title = "Overwatch 2",
             thumbnail = "https://www.b.com",

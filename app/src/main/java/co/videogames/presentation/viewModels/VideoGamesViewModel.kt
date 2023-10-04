@@ -19,8 +19,8 @@ class VideoGamesViewModel @Inject constructor(
     private val getVideoGamesUseCase: GetVideoGamesUseCase,
 ) : ViewModel() {
 
-    private val _videoGamesState = MutableStateFlow<VideoGameState<List<VideoGame>>>(VideoGameState.Loading())
-    val videoGamesState: StateFlow<VideoGameState<List<VideoGame>>> = _videoGamesState
+    private val _videoGamesState = MutableStateFlow<VideoGameState<List<co.videogames.data.remote.response.VideoGame>>>(VideoGameState.Loading())
+    val videoGamesState: StateFlow<VideoGameState<List<co.videogames.data.remote.response.VideoGame>>> = _videoGamesState
 
     init {
 

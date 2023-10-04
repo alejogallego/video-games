@@ -28,7 +28,7 @@ import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun ItemVideoGame(
-    videoGame: VideoGame,
+    videoGame: co.videogames.data.remote.response.VideoGame,
     onClickVideoGame: (id: Int) -> Unit = {}
 ) {
     val context = LocalContext.current

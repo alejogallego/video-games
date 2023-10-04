@@ -33,12 +33,11 @@ fun AppNavigation() {
 
         }
         composable(route = "${AppScreens.DetailScreen.route}/{id}",
-                arguments = listOf(
-                navArgument("id"){ type = NavType.IntType }
-                )
+            arguments = listOf(
+                navArgument("id") { type = NavType.IntType }
+            )
         ) { backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id") ?: 0
-            println("-------llega id${id}")
             DetailScreen(navController = navController, id = id)
         }
     }
