@@ -9,9 +9,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import co.videogames.data.model.AppScreens
 import co.videogames.presentation.screens.DetailScreen
 import co.videogames.presentation.screens.HomeScreen
-import co.videogames.presentation.screens.SplashScreen
+import co.videogames.inicio.view.SplashScreen
 import co.videogames.presentation.viewModels.VideoGamesViewModel
 
 @Composable

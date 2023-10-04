@@ -2,7 +2,7 @@ package co.videogames.data.repository
 
 
 import co.videogames.data.remote.response.VideoGame
-import co.videogames.utilities.VideoGameState
+import co.utilidades.utilidades.VideoGameState
 import kotlinx.coroutines.flow.Flow
 
 interface VideoGameRepository {

@@ -10,15 +10,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import co.videogames.R
-import co.videogames.data.remote.response.VideoGame
 import co.videogames.presentation.components.Loader
-import co.videogames.presentation.navigation.AppScreens
-import co.videogames.utilities.VideoGameState
+import co.videogames.data.model.AppScreens
+import co.videogames.data.remote.response.VideoGame
+import co.utilidades.utilidades.VideoGameState
 
 @Composable
 fun HomeScreen(
     navController: NavHostController,
-    videoGames: VideoGameState<List<co.videogames.data.remote.response.VideoGame>>) {
+    videoGames: VideoGameState<List<VideoGame>>
+) {
     val context = LocalContext.current
     Surface(
         modifier = Modifier.fillMaxSize(),

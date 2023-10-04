@@ -1,6 +1,6 @@
 package co.videogames.data.di
 
-import co.videogames.utilities.AppConstants
+import co.utilidades.utilidades.AppConstants
 import co.videogames.data.remote.NetworkService
 import dagger.Module
 import dagger.Provides

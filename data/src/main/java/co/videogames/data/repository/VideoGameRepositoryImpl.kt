@@ -2,7 +2,7 @@ package co.videogames.data.repository
 
 import android.util.Log
 import co.videogames.data.remote.response.VideoGame
-import co.videogames.utilities.VideoGameState
+import co.utilidades.utilidades.VideoGameState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

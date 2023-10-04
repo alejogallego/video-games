@@ -3,7 +3,7 @@ package co.videogames.presentation.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.videogames.data.remote.response.VideoGame
-import co.videogames.utilities.VideoGameState
+import co.utilidades.utilidades.VideoGameState
 import co.videogames.domain.usecase.GetVideoGamesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
@@ -19,8 +19,8 @@ class VideoGamesViewModel @Inject constructor(
     private val getVideoGamesUseCase: GetVideoGamesUseCase,
 ) : ViewModel() {
 
-    private val _videoGamesState = MutableStateFlow<VideoGameState<List<co.videogames.data.remote.response.VideoGame>>>(VideoGameState.Loading())
-    val videoGamesState: StateFlow<VideoGameState<List<co.videogames.data.remote.response.VideoGame>>> = _videoGamesState
+    private val _videoGamesState = MutableStateFlow<VideoGameState<List<VideoGame>>>(VideoGameState.Loading())
+    val videoGamesState: StateFlow<VideoGameState<List<VideoGame>>> = _videoGamesState
 
     init {
 
