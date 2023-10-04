@@ -3,6 +3,7 @@ object Dependencies {
     val hiltNavigationCompose by lazy { "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"}
 }
 object Modules {
+    val CoreUi = ":core_ui"
     val data: String = ":data"
     val utilidades: String = ":utilidades"
     val detalles: String = ":funcionalidades:detalles"

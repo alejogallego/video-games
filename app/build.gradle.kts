@@ -89,8 +89,9 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
     /** Implementacion de los modulos */
-    implementation(project(Modules.data))
-    implementation(project(Modules.utilidades))
+   // implementation(project(Modules.data))
+   // implementation(project(Modules.utilidades))
+    implementation(project(Modules.CoreUi))
     implementation(project(Modules.detalles))
     implementation(project(Modules.listado))
     implementation(project(Modules.inicio))

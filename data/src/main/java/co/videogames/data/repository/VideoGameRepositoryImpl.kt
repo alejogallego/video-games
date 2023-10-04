@@ -1,8 +1,8 @@
 package co.videogames.data.repository
 
 import android.util.Log
+import co.videogames.data.model.VideoGameState
 import co.videogames.data.remote.response.VideoGame
-import co.utilidades.utilidades.VideoGameState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import co.videogames.data.model.AppScreens
+import co.videogames.core_ui.AppScreens
 import kotlinx.coroutines.delay
 
 @Composable
@@ -24,7 +24,7 @@ fun SplashScreen(navController: NavHostController) {
     LaunchedEffect(key1 = true) {
         delay(3000)
         navController.popBackStack()
-        navController.navigate(AppScreens.MainScreen.route)
+        navController.navigate(AppScreens.ListScreen.route)
     }
 
     Column(

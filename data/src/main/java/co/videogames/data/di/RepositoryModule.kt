@@ -15,7 +15,7 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun instanciarJuegosVideoRepositorio(
-        networkService: co.videogames.data.remote.NetworkService
-    ): co.videogames.data.repository.VideoGameRepository =
-        co.videogames.data.repository.VideoGameRepositoryImpl(networkService)
+        networkService: NetworkService
+    ): VideoGameRepository =
+        VideoGameRepositoryImpl(networkService)
 }

@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import co.videogames.listado.viewmodel.VideoGamesViewModel
 import co.videogames.presentation.navigation.AppNavigation
 import co.videogames.presentation.theme.VideogamesTheme
 import dagger.hilt.android.AndroidEntryPoint

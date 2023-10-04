@@ -1,24 +1,22 @@
 package co.videogames.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import co.videogames.data.model.AppScreens
-import co.videogames.presentation.screens.DetailScreen
-import co.videogames.presentation.screens.HomeScreen
+import co.videogames.core_ui.AppScreens
+import co.videogames.detalles.view.DetailScreen
 import co.videogames.inicio.view.SplashScreen
-import co.videogames.presentation.viewModels.VideoGamesViewModel
+import co.videogames.listado.view.ListScreen
+import co.videogames.listado.viewmodel.VideoGamesViewModel
 
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    val viewModel = viewModel<VideoGamesViewModel>()
+    val viewModel = hiltViewModel<VideoGamesViewModel>()
     NavHost(
         navController = navController,
         startDestination = AppScreens.SplashScreen.route
@@ -26,12 +24,8 @@ fun AppNavigation() {
         composable(route = AppScreens.SplashScreen.route) {
             SplashScreen(navController = navController)
         }
-        composable(route = AppScreens.MainScreen.route) {
-            val videoGames by viewModel.videoGamesState.collectAsState()
-            HomeScreen(navController = navController, videoGames = videoGames)
-        }
-        composable(route = AppScreens.SearchScreen.route) {
-
+        composable(route = AppScreens.ListScreen.route) {
+           ListScreen(navController = navController, viewModel = viewModel)
         }
         composable(route = "${AppScreens.DetailScreen.route}/{id}",
             arguments = listOf(
