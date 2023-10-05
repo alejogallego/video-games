@@ -11,4 +11,9 @@ data class VideoGame(
     @SerializedName("platform") val platform: String,
     @SerializedName("publisher") val publisher: String,
     @SerializedName("release_date") val releaseDate: String,
+    @SerializedName("description") val description: String,
+    @SerializedName("game_url") val gameUrl: String,
+    @SerializedName("minimum_system_requirements") val minimumSystemRequirements: MinimumSystem,
+    @SerializedName("screenshots") val screenshots: List<Screen>,
 )
+

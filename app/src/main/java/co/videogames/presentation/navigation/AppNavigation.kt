@@ -8,15 +8,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import co.videogames.core_ui.AppScreens
-import co.videogames.detalles.view.DetailScreen
+import co.videogames.detalles.view.DetallesScreen
+import co.videogames.detalles.viewmodel.DetallesViewModel
 import co.videogames.inicio.view.SplashScreen
 import co.videogames.listado.view.ListScreen
-import co.videogames.listado.viewmodel.VideoGamesViewModel
+import co.videogames.listado.viewmodel.VideoJuegosViewModel
 
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    val viewModel = hiltViewModel<VideoGamesViewModel>()
+    val videoGamesViewModel = hiltViewModel<VideoJuegosViewModel>()
+    val detallesViewModel = hiltViewModel<DetallesViewModel>()
     NavHost(
         navController = navController,
         startDestination = AppScreens.SplashScreen.route
@@ -25,7 +27,7 @@ fun AppNavigation() {
             SplashScreen(navController = navController)
         }
         composable(route = AppScreens.ListScreen.route) {
-           ListScreen(navController = navController, viewModel = viewModel)
+           ListScreen(navController = navController, viewModel = videoGamesViewModel)
         }
         composable(route = "${AppScreens.DetailScreen.route}/{id}",
             arguments = listOf(
@@ -33,7 +35,7 @@ fun AppNavigation() {
             )
         ) { backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id") ?: 0
-            DetailScreen(navController = navController, id = id)
+            DetallesScreen(navController = navController, id = id, viewModel = detallesViewModel)
         }
     }
 }

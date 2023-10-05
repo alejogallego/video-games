@@ -8,18 +8,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import co.videogames.core_ui.AppScreens
 import co.videogames.data.model.VideoGameState
-import co.videogames.data.remote.response.VideoGame
-import co.videogames.listado.viewmodel.VideoGamesViewModel
+import co.videogames.listado.viewmodel.VideoJuegosViewModel
 
 @Composable
 fun ListScreen(
     navController: NavHostController,
-    viewModel: VideoGamesViewModel
+    viewModel: VideoJuegosViewModel
 ) {
     val context = LocalContext.current
     val videoGames by viewModel.videos.collectAsState()
@@ -37,7 +34,7 @@ fun ListScreen(
             is VideoGameState.Success -> {
                 val resultado = videoGames.data
                 if (resultado != null) {
-                    VideoGameScreen(data = resultado,
+                    ListScreenContent(data = resultado,
                         onClickVideoGame = {id ->
                             navController.navigate(
                                 route = "${AppScreens.DetailScreen.route}/${id}",
@@ -58,37 +55,4 @@ fun ListScreen(
             }
         }
     }
-
-
-}
-
-@Preview(showBackground = true)
-@Composable
-fun HomeScreenPreview() {
-    val data = listOf(
-        VideoGame(
-            id = 200,
-            title = "Overwatch 2",
-            thumbnail = "https://www.a.com",
-            genre = "Shooter",
-            shortDescription = "A hero-focused",
-            platform = "PC (Windows)",
-            publisher = "Activision",
-            releaseDate = "2022-10-04"
-        ),
-        VideoGame(
-            id = 400,
-            title = "Overwatch 2",
-            thumbnail = "https://www.b.com",
-            genre = "Shooter",
-            shortDescription = "A hero-focused",
-            platform = "PC (Windows)",
-            publisher = "Activision",
-            releaseDate = "2022-10-07"
-        )
-    )
-    val videoGames = VideoGameState.Success(data)
-    val navController = rememberNavController()
-    //ListScreen(videoGames = videoGames, navController = navController)
-   // ListScreen(navController = navController)
 }

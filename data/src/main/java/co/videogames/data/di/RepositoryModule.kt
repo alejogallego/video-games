@@ -1,8 +1,9 @@
 package co.videogames.data.di
 
 import co.videogames.data.remote.NetworkService
-import co.videogames.data.repository.VideoGameRepository
-import co.videogames.data.repository.VideoGameRepositoryImpl
+import co.videogames.data.repository.DetalleDelVideoJuegoRepository
+import co.videogames.data.repository.TodosLosVideoJuegosRepository
+import co.videogames.data.repository.TodosLosVideoJuegosRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,8 +15,16 @@ import javax.inject.Singleton
 object RepositoryModule {
     @Singleton
     @Provides
-    fun instanciarJuegosVideoRepositorio(
+    fun instanciarTodosLosVideoJuegosRepository(
         networkService: NetworkService
-    ): VideoGameRepository =
-        VideoGameRepositoryImpl(networkService)
+    ): TodosLosVideoJuegosRepository = TodosLosVideoJuegosRepositoryImpl(networkService)
+
+    @Singleton
+    @Provides
+    fun instanciarDetalleDelVideoJuegoRepository(
+        networkService: NetworkService
+    ): DetalleDelVideoJuegoRepository = TodosLosVideoJuegosRepositoryImpl(networkService)
+
+
+
 }
