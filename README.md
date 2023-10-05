@@ -36,8 +36,6 @@ La Clean Architecture proporciona una base sólida para el desarrollo de aplicac
 
 En resumen, Clean Architecture es un enfoque arquitectónico que promueve la organización clara, la independencia tecnológica y la separación de responsabilidades en el desarrollo de aplicaciones, lo que contribuye a la creación de software robusto y de alta calidad.
 
-
-
 - **Módulos**: 
     - [Nombre del Módulo 1]: app    
     - [Nombre del Módulo 2]: core_ui
@@ -47,15 +45,10 @@ En resumen, Clean Architecture es un enfoque arquitectónico que promueve la org
                          ## -- favoritos
                          ## -- inicio
                          ## -- listado
-       
 
 ## Patrones de Diseño
 - **MVVM (Model-View-ViewModel)**: El patron de diseño MVVM se trabajo dentro de cada modulo
 
-
-
-
-# WeatherApp-Android-Clean-Architecture-Jetpack-Compose-Kotlin-Hilt-Flow
 
 La Clean Architecture es un patrón de diseño de software que separa la lógica de negocio de la capa de presentación. Esto hace que la aplicación sea más modular y más fácil de probar. Jetpack Compose es una herramienta moderna para construir interfaces de usuario nativas en Android. Es declarativa y componible, lo que facilita la creación de interfaces de usuario complejas con menos código. Kotlin es un lenguaje de programación moderno y completamente interoperable con Java. Es conciso, expresivo y seguro. Las coroutines son un modelo de concurrencia ligero que facilita la escritura de código asincrónico. Flow es una biblioteca de programación reactiva que facilita la manipulación de flujos de datos. Hilt es una biblioteca de inyección de dependencias que simplifica la gestión de dependencias en aplicaciones Android. Las pruebas unitarias son una técnica de prueba de software que se utiliza para verificar la corrección de unidades individuales de código.
 
