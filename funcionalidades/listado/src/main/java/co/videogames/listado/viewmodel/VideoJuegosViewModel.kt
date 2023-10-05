@@ -19,8 +19,8 @@ class VideoJuegosViewModel @Inject constructor(
     private val traerTodosLosVideoJuegosUseCase: TraerTodosLosVideoJuegosUseCase
 ) : ViewModel() {
 
-    private val _videos = MutableStateFlow<VideoGameState<List<VideoGame>>>(VideoGameState.Loading())
-    val videos: StateFlow<VideoGameState<List<VideoGame>>> = _videos
+    private val _videoJuegos = MutableStateFlow<VideoGameState<List<VideoGame>>>(VideoGameState.Loading())
+    val videoJuegos: StateFlow<VideoGameState<List<VideoGame>>> = _videoJuegos
 
     init {
         getVideoGames()
@@ -32,11 +32,11 @@ class VideoJuegosViewModel @Inject constructor(
                 /** Este delay es solo para que puedan visualizar el loader */
                 delay(2000)
                 traerTodosLosVideoJuegosUseCase.invoke().collectLatest { videoGames ->
-                   _videos.value = videoGames
+                    _videoJuegos.value = videoGames
                 }
             }
         } else {
-            _videos.value = VideoGameState.Empty()
+            _videoJuegos.value = VideoGameState.Empty()
         }
     }
 

@@ -19,12 +19,12 @@ fun ListScreen(
     viewModel: VideoJuegosViewModel
 ) {
     val context = LocalContext.current
-    val videoGames by viewModel.videos.collectAsState()
+    val videoJuegos by viewModel.videoJuegos.collectAsState()
 
     Surface(
         modifier = Modifier.fillMaxSize(),
     ) {
-        when (videoGames) {
+        when (videoJuegos) {
             is VideoGameState.Loading -> {
                // Loader()
             }
@@ -32,9 +32,9 @@ fun ListScreen(
 
             }
             is VideoGameState.Success -> {
-                val resultado = videoGames.data
+                val resultado = videoJuegos.datos
                 if (resultado != null) {
-                    ListScreenContent(data = resultado,
+                    ListScreenContent(datos = resultado,
                         onClickVideoGame = {id ->
                             navController.navigate(
                                 route = "${AppScreens.DetailScreen.route}/${id}",
@@ -44,7 +44,7 @@ fun ListScreen(
                 }
             }
             is VideoGameState.Error -> {
-                val textError = videoGames.message
+                val textError = videoJuegos.mensaje
                 Toast.makeText(context, textError, Toast.LENGTH_LONG).show()
             }
 

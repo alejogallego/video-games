@@ -15,10 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import co.videogames.data.remote.response.VideoGame
 
-
 @Composable
-fun ListScreenContent(data: List<VideoGame>, onClickVideoGame: (id: Int) -> Unit = {}) {
-    val listVideoGame by remember { mutableStateOf(data) }
+fun ListScreenContent(datos: List<VideoGame>, onClickVideoGame: (id: Int) -> Unit = {}) {
+    val listVideoGame by remember { mutableStateOf(datos) }
     LazyColumn(modifier = Modifier
         .background(color = Color.LightGray)
         .padding(10.dp)) {
