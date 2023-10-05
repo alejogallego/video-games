@@ -88,6 +88,16 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
-    implementation(project(Modules.utilities))
+    /** Implementacion de los modulos */
+   // implementation(project(Modules.data))
+   // implementation(project(Modules.utilidades))
+    implementation(project(Modules.CoreUi))
+    implementation(project(Modules.detalles))
+    implementation(project(Modules.listado))
+    implementation(project(Modules.inicio))
+    implementation(project(Modules.favoritos))
+
+    /** Coil */
+    implementation("io.coil-kt:coil-compose:2.2.2")
 
 }

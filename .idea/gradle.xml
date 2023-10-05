@@ -13,7 +13,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/utilities" />
+            <option value="$PROJECT_DIR$/core_ui" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/funcionalidades" />
+            <option value="$PROJECT_DIR$/funcionalidades/detalles" />
+            <option value="$PROJECT_DIR$/funcionalidades/favoritos" />
+            <option value="$PROJECT_DIR$/funcionalidades/inicio" />
+            <option value="$PROJECT_DIR$/funcionalidades/listado" />
+            <option value="$PROJECT_DIR$/utilidades" />
           </set>
         </option>
       </GradleProjectSettings>

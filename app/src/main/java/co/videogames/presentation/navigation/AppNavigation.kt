@@ -1,42 +1,41 @@
 package co.videogames.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import co.videogames.presentation.screens.HomeScreen
-import co.videogames.presentation.screens.SplashScreen
-import co.videogames.presentation.viewModels.VideoGamesViewModel
+import androidx.navigation.navArgument
+import co.videogames.core_ui.AppScreens
+import co.videogames.detalles.view.DetallesScreen
+import co.videogames.detalles.viewmodel.DetallesViewModel
+import co.videogames.inicio.view.SplashScreen
+import co.videogames.listado.view.ListScreen
+import co.videogames.listado.viewmodel.VideoJuegosViewModel
 
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    val viewModel = viewModel<VideoGamesViewModel>()
+    val videoGamesViewModel = hiltViewModel<VideoJuegosViewModel>()
+    val detallesViewModel = hiltViewModel<DetallesViewModel>()
     NavHost(
         navController = navController,
         startDestination = AppScreens.SplashScreen.route
     ) {
-
-        composable(route = AppScreens.SplashScreen.route){
+        composable(route = AppScreens.SplashScreen.route) {
             SplashScreen(navController = navController)
         }
-        composable(route = AppScreens.MainScreen.route){
-            val videoGames by viewModel.videoGamesState.collectAsState()
-            HomeScreen(videoGames)
+        composable(route = AppScreens.ListScreen.route) {
+           ListScreen(navController = navController, viewModel = videoGamesViewModel)
         }
-        composable(route = AppScreens.SearchScreen.route){
-
+        composable(route = "${AppScreens.DetailScreen.route}/{id}",
+            arguments = listOf(
+                navArgument("id") { type = NavType.IntType }
+            )
+        ) { backStackEntry ->
+            val id = backStackEntry.arguments?.getInt("id") ?: 0
+            DetallesScreen(navController = navController, id = id, viewModel = detallesViewModel)
         }
-        composable(route = AppScreens.DetailScreen.route){
-
-        }
-
-
     }
-
-
-
 }
