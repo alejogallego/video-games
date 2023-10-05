@@ -12,7 +12,7 @@
 La modularización también es una parte esencial de esta prueba, lo que significa que la aplicación está dividida en módulos funcionales independientes para promover la reutilización del código y facilitar la escalabilidad. En resumen, esta aplicación sirve como un escaparate de habilidades avanzadas en el desarrollo de aplicaciones Android, destacando la capacidad de crear una solución técnica sólida y eficiente en un entorno moderno y modularizado.
 
 ## Arquitectura
-- **Clean Architecture**: 
+- **Clean Architecture**:
 
 ## Clean Architecture
 
