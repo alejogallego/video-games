@@ -13,5 +13,4 @@ class TraerDetallesDelVideoJuegoUseCase @Inject constructor(
     suspend operator fun invoke(id:Int): Flow<VideoGameState<VideoGame>> {
         return detalleDelVideoJuegoRepository.traerDetalleDeVideoJuego(id= id)
     }
-
 }

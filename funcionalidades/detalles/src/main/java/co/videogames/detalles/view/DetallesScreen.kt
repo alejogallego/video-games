@@ -39,6 +39,7 @@ fun DetallesScreen(navController: NavHostController, id: Int, viewModel: Detalle
                 if (resultado != null) {
                     DetallesScreenContent(datos = resultado,
                         onClickVideoGame = { id ->
+                            viewModel.guardarVideoJuegoBaseDeDatos(resultado)
                             println("guardar en la base de datos$id")
                         }
                     )

@@ -86,4 +86,11 @@ dependencies {
     implementation("androidx.hilt:hilt-work:1.0.0")
     implementation(Dependencies.hiltNavigationCompose)
     ksp("com.google.dagger:hilt-compiler:2.48")
+
+    /** Room */
+    implementation("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+    ksp("androidx.room:room-compiler:2.5.2")
+
+
 }
