@@ -54,14 +54,6 @@ La Clean Architecture es un patrón de diseño de software que separa la lógica
 
 Este proyecto es un buen ejemplo de cómo utilizar tecnologías Android modernas para construir una aplicación de alta calidad. Está bien diseñado, fácil de probar y utiliza las últimas herramientas y tecnologías.
 
-### Capturas de Pantalla
-
-<img src="https://user-images.githubusercontent.com/11981999/230939471-a1da5444-ea34-4663-b396-1b7294c810b5.png" width="200" height="400">  <img src="https://user-images.githubusercontent.com/11981999/230939486-43d06415-90bc-4b96-9294-31be6b14aa3e.png" width="200" height="400">  <img src="https://user-images.githubusercontent.com/11981999/230939490-ff1d1772-8495-4e73-bbf0-0ba0b7985421.png" width="200" height="400">  <img src="https://user-images.githubusercontent.com/11981999/230939504-e8a81e28-082f-4fd6-857f-3097e3aea424.png" width="200" height="400">
-
-### Funciones
-- Obtener datos meteorológicos actuales
-- Obtener pronóstico por hora
-- Obtener pronóstico meteorológico de 10 días
 
 ### Tecnologías Utilizadas
 
