@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import co.videogames.core_ui.AppScreens
+import co.videogames.core_ui.Loader
+import co.videogames.core_ui.R.string
 import co.videogames.data.model.VideoGameState
 import co.videogames.listado.viewmodel.ListadoVideoJuegosViewModel
 
@@ -26,10 +28,11 @@ fun ListadoScreen(
     ) {
         when (videoJuegos) {
             is VideoGameState.Loading -> {
-               // Loader()
+                Loader()
             }
             is VideoGameState.Empty -> {
-
+                val textError = context.getString(string.sin_registros)
+                Toast.makeText(context, textError, Toast.LENGTH_LONG).show()
             }
             is VideoGameState.Success -> {
                 val resultado = videoJuegos.datos
@@ -47,10 +50,8 @@ fun ListadoScreen(
                 val textError = videoJuegos.mensaje
                 Toast.makeText(context, textError, Toast.LENGTH_LONG).show()
             }
-
             else -> {
-                // val textError = context.getString(R.string.error_general)
-                val textError = "---d--sd-s-d-s-d"
+                val textError = context.getString(string.error_general)
                 Toast.makeText(context, textError, Toast.LENGTH_LONG).show()
             }
         }

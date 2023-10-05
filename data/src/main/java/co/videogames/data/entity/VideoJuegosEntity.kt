@@ -9,13 +9,13 @@ import co.videogames.utilidades.AppConstants.NOMBRE_BASE_DATOS
 data class VideoJuegosEntity(
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id") var id: Int,
-    @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "thumbnail") val thumbnail: String,
-    @ColumnInfo(name = "genre") val genre: String,
-    @ColumnInfo(name = "shortDescription") val shortDescription: String,
-    @ColumnInfo(name = "platform") val platform: String,
-    @ColumnInfo(name = "publisher") val publisher: String,
-    @ColumnInfo(name = "releaseDate") val releaseDate: String,
-    @ColumnInfo(name = "description") val description: String,
-    @ColumnInfo(name = "gameUrl") val gameUrl: String
+    @ColumnInfo(name = "title") val titulo: String,
+    @ColumnInfo(name = "thumbnail") val imagen: String,
+    @ColumnInfo(name = "genre") val genero: String,
+    @ColumnInfo(name = "shortDescription") val descripcionCorta: String,
+    @ColumnInfo(name = "platform") val plataforma: String,
+    @ColumnInfo(name = "publisher") val editor: String,
+    @ColumnInfo(name = "releaseDate") val fecha: String,
+    @ColumnInfo(name = "description") val descripcion: String,
+    @ColumnInfo(name = "gameUrl") val urlDelJuego: String
 )

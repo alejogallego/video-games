@@ -77,6 +77,7 @@ dependencies {
 
     /** Modulos **/
     implementation(project(Modules.data))
+    implementation(project(Modules.CoreUi))
 
     /** Hilt */
     implementation("com.google.dagger:hilt-android:2.48")

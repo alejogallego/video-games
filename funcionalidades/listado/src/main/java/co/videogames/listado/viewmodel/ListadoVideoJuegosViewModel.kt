@@ -7,7 +7,6 @@ import co.videogames.data.remote.response.VideoJuegos
 import co.videogames.listado.usecases.TraerTodosLosVideoJuegosUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -29,8 +28,6 @@ class ListadoVideoJuegosViewModel @Inject constructor(
     private fun traerTodosLosVideoJuegos() {
         if (true) {
             viewModelScope.launch(IO) {
-                /** Este delay es solo para que puedan visualizar el loader */
-                delay(2000)
                 traerTodosLosVideoJuegosUseCase.invoke().collectLatest { videoGames ->
                     _videoJuegos.value = videoGames
                 }

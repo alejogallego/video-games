@@ -1,4 +1,12 @@
 <resources>
     <string name="nombre_de_la_aplicacion">Video Juegos</string>
-
+    <string name="titulo">Título</string>
+    <string name="genero">Género</string>
+    <string name="descripcion">Descripción</string>
+    <string name="plataforma">Plataforma</string>
+    <string name="editor">Editor</string>
+    <string name="fecha">Fecha lanzamiento</string>
+    <string name="ver_mas">Ver mas detalles</string>
+    <string name="sin_registros">No se encontraron registros</string>
+    <string name="error_general">Error general del sistema intenta mas tarde.</string>
 </resources>

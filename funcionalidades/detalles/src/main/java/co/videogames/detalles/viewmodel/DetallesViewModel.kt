@@ -9,7 +9,6 @@ import co.videogames.detalles.usecases.GuardarVideoJuegoBaseDeDatos
 import co.videogames.detalles.usecases.TraerDetallesDelVideoJuegoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -28,8 +27,6 @@ class DetallesViewModel @Inject constructor(
     fun traerElDetalleDelVideoJuego(id: Int) {
         if (true) {
             viewModelScope.launch(Dispatchers.IO) {
-                /** Este delay es solo para que puedan visualizar el loader */
-                delay(2000)
                 traerDetalleDelVideoJuegoUseCase.invoke(id = id).collectLatest { videoJuego ->
                     _videoJuego.value = videoJuego
                 }
@@ -42,15 +39,15 @@ class DetallesViewModel @Inject constructor(
     fun guardarVideoJuegoBaseDeDatos(resultado: VideoJuegos) {
         val datos = VideoJuegosEntity(
             id = resultado.id,
-            title = resultado.title,
-            thumbnail = resultado.thumbnail,
-            genre = resultado.genre,
-            shortDescription = resultado.shortDescription,
-            platform = resultado.platform,
-            publisher = resultado.publisher,
-            releaseDate = resultado.releaseDate,
-            description = resultado.description,
-            gameUrl = resultado.gameUrl,
+            titulo = resultado.titulo,
+            imagen = resultado.imagen,
+            genero = resultado.genero,
+            descripcionCorta = resultado.descripcionCorta,
+            plataforma = resultado.plataforma,
+            editor = resultado.editor,
+            fecha = resultado.fecha,
+            descripcion = resultado.descripcion,
+            urlDelJuego = resultado.urlDelJuego,
         )
         viewModelScope.launch(Dispatchers.IO) {
             guardarVideoJuegoBaseDeDatos.invoke(datos = datos)

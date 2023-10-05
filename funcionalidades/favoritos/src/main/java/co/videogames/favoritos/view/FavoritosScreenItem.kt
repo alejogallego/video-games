@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,6 +23,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import co.videogames.data.entity.VideoJuegosEntity
 import coil.compose.rememberAsyncImagePainter
+import co.videogames.core_ui.R.string
+import co.videogames.core_ui.ayudas.General
 
 @Composable
 fun FavoritosScreenItem(
@@ -45,54 +46,50 @@ fun FavoritosScreenItem(
                 .clip(RoundedCornerShape(16.dp))
         ) {
             Image(
-                painter = rememberAsyncImagePainter(videoJuego.thumbnail),
-                contentDescription = videoJuego.title,
+                painter = rememberAsyncImagePainter(videoJuego.imagen),
+                contentDescription = videoJuego.titulo,
                 modifier = Modifier.size(90.dp)
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column {
                 Text(
-                    // "${context.getString(R.string.titulo)}: ${videoGame.title}",
-                    text = "------: ${videoJuego.title}",
+
+                    text = "${context.getString(string.titulo)}: ${videoJuego.titulo}",
                     fontWeight = FontWeight(700),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Género: ${videoJuego.genre}",
+                    text = "${context.getString(string.genero)}: ${videoJuego.genero}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Descripción: ${videoJuego.shortDescription}",
+                    text = "${context.getString(string.descripcion)}: ${videoJuego.descripcionCorta}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Plataforma: ${videoJuego.platform}",
+                    text = "${context.getString(string.plataforma)}: ${videoJuego.plataforma}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Editor: ${videoJuego.publisher}",
+                    text = "${context.getString(string.editor)}: ${videoJuego.editor}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
+                val nuevaFecha = General.cambiarFormatoDeFecha(videoJuego.fecha)
                 Text(
-                    text = "Fecha lanzamiento: ${videoJuego.releaseDate}",
+                    text = "${context.getString(string.fecha)}: $nuevaFecha",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
-                Button(onClick = {
-                    onClickVideoGame.invoke(videoJuego.id)
-                }, modifier = Modifier.fillMaxWidth()) {
-                    Text(text = "Ver mas detalles")
-                }
             }
         }
     }

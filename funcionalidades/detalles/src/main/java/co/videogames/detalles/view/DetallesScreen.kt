@@ -10,8 +10,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
+import co.videogames.core_ui.Loader
 import co.videogames.data.model.VideoGameState
 import co.videogames.detalles.viewmodel.DetallesViewModel
+import co.videogames.core_ui.R.string
 
 @Composable
 fun DetallesScreen(navController: NavHostController, id: Int, viewModel: DetallesViewModel) {
@@ -29,18 +31,18 @@ fun DetallesScreen(navController: NavHostController, id: Int, viewModel: Detalle
     ) {
         when (videoJuego) {
             is VideoGameState.Loading -> {
-                // Loader()
+                Loader()
             }
             is VideoGameState.Empty -> {
-
+                val textError = context.getString(string.sin_registros)
+                Toast.makeText(context, textError, Toast.LENGTH_LONG).show()
             }
             is VideoGameState.Success -> {
                 val resultado = videoJuego.datos
                 if (resultado != null) {
                     DetallesScreenContent(datos = resultado,
-                        onClickVideoGame = { id ->
+                        onClickVideoGame = {
                             viewModel.guardarVideoJuegoBaseDeDatos(resultado)
-                            println("guardar en la base de datos$id")
                         }
                     )
                 }

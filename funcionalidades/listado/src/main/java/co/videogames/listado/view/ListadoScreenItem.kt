@@ -24,6 +24,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import co.videogames.data.remote.response.VideoJuegos
 import coil.compose.rememberAsyncImagePainter
+import co.videogames.core_ui.R.string
+import co.videogames.core_ui.ayudas.General
 
 @Composable
 fun ListadoScreenItem(
@@ -45,45 +47,46 @@ fun ListadoScreenItem(
                 .clip(RoundedCornerShape(16.dp))
         ) {
             Image(
-                painter = rememberAsyncImagePainter(videoGame.thumbnail),
-                contentDescription = videoGame.title,
+                painter = rememberAsyncImagePainter(videoGame.imagen),
+                contentDescription = videoGame.titulo,
                 modifier = Modifier.size(90.dp)
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column {
                 Text(
-                    // "${context.getString(R.string.titulo)}: ${videoGame.title}",
-                    text = "------: ${videoGame.title}",
+                    text = "${context.getString(string.titulo)}: ${videoGame.titulo}",
                     fontWeight = FontWeight(700),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Género: ${videoGame.genre}",
+                    text = "${context.getString(string.genero)}: ${videoGame.genero}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Descripción: ${videoGame.shortDescription}",
+                    text = "${context.getString(string.descripcion)}: ${videoGame.descripcionCorta}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Plataforma: ${videoGame.platform}",
+                    text = "${context.getString(string.plataforma)}: ${videoGame.plataforma}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Editor: ${videoGame.publisher}",
+                    text = "${context.getString(string.editor)}: ${videoGame.editor}",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(4.dp))
+
+                val nuevaFecha = General.cambiarFormatoDeFecha(videoGame.fecha)
                 Text(
-                    text = "Fecha lanzamiento: ${videoGame.releaseDate}",
+                    text = "${context.getString(string.fecha)}: $nuevaFecha",
                     fontWeight = FontWeight(400),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -91,7 +94,7 @@ fun ListadoScreenItem(
                 Button(onClick = {
                     onClickVideoGame.invoke(videoGame.id)
                 } , modifier = Modifier.fillMaxWidth()) {
-                    Text(text = "Ver mas detalles")
+                    Text(text = "${context.getString(string.ver_mas)}")
                 }
             }
         }
