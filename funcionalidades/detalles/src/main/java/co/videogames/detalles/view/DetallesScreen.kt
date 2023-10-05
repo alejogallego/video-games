@@ -10,7 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
-import co.videogames.core_ui.Loader
+import co.videogames.core_ui.view.Loader
 import co.videogames.data.model.VideoGameState
 import co.videogames.detalles.viewmodel.DetallesViewModel
 import co.videogames.core_ui.R.string

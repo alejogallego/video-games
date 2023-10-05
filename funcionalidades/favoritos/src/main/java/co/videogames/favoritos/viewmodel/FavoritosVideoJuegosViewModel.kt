@@ -6,7 +6,6 @@ import co.videogames.data.entity.VideoJuegosEntity
 import co.videogames.favoritos.usecases.TraerTodosLosVideoJuegosFavoritosBaseDeDatosUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -25,17 +24,9 @@ class FavoritosVideoJuegosViewModel @Inject constructor(
     }
 
     private fun traerTodosLosVideoJuegosBaseDeDatos() {
-        if (true) {
             viewModelScope.launch(Dispatchers.IO) {
-                val a = traerTodosLosVideoJuegosFavoritosBaseDeDatosUseCase.invoke()
-
-                println("------------a:$a")
-
-                _videoJuegos.value = a
+                _videoJuegos.value = traerTodosLosVideoJuegosFavoritosBaseDeDatosUseCase.invoke()
             }
-        } else {
-            _videoJuegos.value = emptyList()
-        }
     }
 
 }

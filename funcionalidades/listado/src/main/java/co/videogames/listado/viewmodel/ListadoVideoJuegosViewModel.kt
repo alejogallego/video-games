@@ -26,14 +26,10 @@ class ListadoVideoJuegosViewModel @Inject constructor(
     }
 
     private fun traerTodosLosVideoJuegos() {
-        if (true) {
-            viewModelScope.launch(IO) {
-                traerTodosLosVideoJuegosUseCase.invoke().collectLatest { videoGames ->
-                    _videoJuegos.value = videoGames
-                }
+        viewModelScope.launch(IO) {
+            traerTodosLosVideoJuegosUseCase.invoke().collectLatest { videoGames ->
+                _videoJuegos.value = videoGames
             }
-        } else {
-            _videoJuegos.value = VideoGameState.Empty()
         }
     }
 

@@ -21,6 +21,7 @@ import co.videogames.core_ui.AppScreens
 import kotlinx.coroutines.delay
 import co.videogames.core_ui.R.drawable
 import co.videogames.core_ui.R.string
+import co.videogames.core_ui.ayudas.General
 
 @Composable
 fun SplashScreen(navController: NavHostController) {
@@ -30,8 +31,11 @@ fun SplashScreen(navController: NavHostController) {
     LaunchedEffect(key1 = true) {
         delay(3000)
         navController.popBackStack()
-       // navController.navigate(AppScreens.FavoritosScreen.route)
-        navController.navigate(AppScreens.ListadoScreen.route)
+        if (General.estaConectadoAInternet(context = context)) {
+            navController.navigate(AppScreens.ListadoScreen.route)
+        } else {
+            navController.navigate(AppScreens.FavoritosScreen.route)
+       }
     }
 
     Column(

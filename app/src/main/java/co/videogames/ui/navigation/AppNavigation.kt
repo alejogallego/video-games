@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import co.videogames.core_ui.AppScreens
+import co.videogames.core_ui.view.BotonesNavegacion
 import co.videogames.detalles.view.DetallesScreen
 import co.videogames.detalles.viewmodel.DetallesViewModel
 import co.videogames.favoritos.view.FavoritosScreen

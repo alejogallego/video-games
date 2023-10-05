@@ -5,7 +5,6 @@ sealed class AppScreens(val route: String) {
     object PrincipalScreen : AppScreens(route = "principal_screen")
     object ListadoScreen : AppScreens(route = "listado_screen")
     object DetallesScreen : AppScreens(route = "detalles_screen")
-
     object FavoritosScreen : AppScreens(route = "favoritos_screen")
 
 
