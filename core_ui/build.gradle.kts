@@ -63,7 +63,7 @@ dependencies {
 
     /** Modulos **/
     implementation(project(Modules.data))
-    implementation(project(Modules.utilidades))
+
 
     /** Navegation **/
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")

@@ -63,7 +63,6 @@ dependencies {
 
     /** Modulos **/
     implementation(project(Modules.data))
-    implementation(project(Modules.utilidades))
     implementation(project(Modules.CoreUi))
 
     /** Navegation **/

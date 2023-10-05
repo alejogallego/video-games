@@ -1,6 +1,8 @@
 package co.videogames.data.di
 
-import co.videogames.utilidades.AppConstants
+import co.videogames.data.constantes.AppConstantes.BASE_URL
+import co.videogames.data.constantes.AppConstantes.TIEMPO_ESPERA_SEGUNDOS
+
 import co.videogames.data.remote.NetworkService
 import dagger.Module
 import dagger.Provides
@@ -20,16 +22,16 @@ class NetworkModule {
     fun provideRetrofit(): NetworkService =
         Retrofit.Builder()
             .client(getOkHttpClient())
-            .baseUrl(AppConstants.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(NetworkService::class.java)
 
     private fun getOkHttpClient() =
         OkHttpClient.Builder()
-            .connectTimeout(AppConstants.TIEMPO_ESPERA_SEGUNDOS, TimeUnit.SECONDS)
-            .readTimeout(AppConstants.TIEMPO_ESPERA_SEGUNDOS, TimeUnit.SECONDS)
-            .writeTimeout(AppConstants.TIEMPO_ESPERA_SEGUNDOS, TimeUnit.SECONDS)
+            .connectTimeout(TIEMPO_ESPERA_SEGUNDOS, TimeUnit.SECONDS)
+            .readTimeout(TIEMPO_ESPERA_SEGUNDOS, TimeUnit.SECONDS)
+            .writeTimeout(TIEMPO_ESPERA_SEGUNDOS, TimeUnit.SECONDS)
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
             }).build()

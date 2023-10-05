@@ -3,7 +3,8 @@ package co.videogames.data.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import co.videogames.utilidades.AppConstants.NOMBRE_BASE_DATOS
+import co.videogames.data.constantes.AppConstantes.NOMBRE_BASE_DATOS
+
 
 @Entity(tableName = NOMBRE_BASE_DATOS)
 data class VideoJuegosEntity(
