@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -72,4 +74,25 @@ dependencies {
     androidTestImplementation("androidx.navigation:navigation-testing:2.7.3")
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:2.7.3")
+
+    /** Modulos **/
+    implementation(project(Modules.data))
+    implementation(project(Modules.CoreUi))
+
+    /** Hilt */
+    implementation("com.google.dagger:hilt-android:2.48")
+    implementation("androidx.hilt:hilt-common:1.0.0")
+    implementation("androidx.hilt:hilt-work:1.0.0")
+    implementation(Dependencies.hiltNavigationCompose)
+    ksp("com.google.dagger:hilt-compiler:2.48")
+
+    /** Coil */
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
+
+    /** ViewModel and livedata */
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
 }

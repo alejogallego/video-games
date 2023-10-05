@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">videogames</string>
-    <string name="error_general">Error general del sistema intenta mas tarde.</string>
-    <string name="titulo">Título</string>
 </resources>

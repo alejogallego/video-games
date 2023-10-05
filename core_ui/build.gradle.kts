@@ -63,7 +63,7 @@ dependencies {
 
     /** Modulos **/
     implementation(project(Modules.data))
-    implementation(project(Modules.utilidades))
+
 
     /** Navegation **/
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")
@@ -85,4 +85,6 @@ dependencies {
     implementation("androidx.hilt:hilt-work:1.0.0")
     implementation(Dependencies.hiltNavigationCompose)
     ksp("com.google.dagger:hilt-compiler:2.48")
+
+
 }

@@ -22,12 +22,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import co.videogames.data.remote.response.VideoGame
+import co.videogames.data.remote.response.VideoJuegos
 import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun DetallesScreenContent(
-    datos: VideoGame,
+    datos: VideoJuegos,
     onClickVideoGame: (id: Int) -> Unit = {}
 ) {
     Box(
@@ -40,39 +40,39 @@ fun DetallesScreenContent(
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             Spacer(modifier = Modifier.width(16.dp))
             Text(
-                text = datos.title,
+                text = datos.titulo,
                 fontWeight = FontWeight(700),
                 fontSize = 20.sp,
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.width(16.dp))
             Image(
-                painter = rememberAsyncImagePainter(datos.thumbnail),
-                contentDescription = datos.title,
+                painter = rememberAsyncImagePainter(datos.imagen),
+                contentDescription = datos.titulo,
                 modifier = Modifier.fillMaxWidth().height(300.dp)
             )
             Spacer(modifier = Modifier.width(16.dp))
 
             Text(
-                text = "Descripción: ${datos.description}",
+                text = "Descripción: ${datos.descripcion}",
                 fontWeight = FontWeight(400),
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Url: ${datos.gameUrl}",
+                text = "Url: ${datos.urlDelJuego}",
                 fontWeight = FontWeight(400),
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Requisitos mínimos del sistema: ${datos.minimumSystemRequirements}",
+                text = "Requisitos mínimos del sistema: ${datos.requerimientos}",
                 fontWeight = FontWeight(400),
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Capturas de pantalla: ${datos.screenshots}",
+                text = "Capturas de pantalla: ${datos.pantallazos}",
                 fontWeight = FontWeight(400),
                 modifier = Modifier.fillMaxWidth()
             )

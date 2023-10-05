@@ -20,7 +20,7 @@
             <option value="$PROJECT_DIR$/funcionalidades/favoritos" />
             <option value="$PROJECT_DIR$/funcionalidades/inicio" />
             <option value="$PROJECT_DIR$/funcionalidades/listado" />
-            <option value="$PROJECT_DIR$/utilidades" />
+            <option value="$PROJECT_DIR$/funcionalidades/principal" />
           </set>
         </option>
       </GradleProjectSettings>

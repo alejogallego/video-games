@@ -1,11 +1,11 @@
 package co.videogames.core_ui
 
-sealed class AppScreens(val route: String){
-    object  SplashScreen: AppScreens(route = "splash_screen")
-    object  MainScreen: AppScreens(route = "main_screen")
-    object  SearchScreen: AppScreens(route = "search_screen")
-    object  DetailScreen: AppScreens(route = "detail_screen")
+sealed class AppScreens(val route: String) {
+    object InicioScreen : AppScreens(route = "inicio_screen")
+    object PrincipalScreen : AppScreens(route = "principal_screen")
+    object ListadoScreen : AppScreens(route = "listado_screen")
+    object DetallesScreen : AppScreens(route = "detalles_screen")
+    object FavoritosScreen : AppScreens(route = "favoritos_screen")
 
-    object ListScreen: AppScreens(route = "list_screen")
-    object DetailsScreen: AppScreens(route = "details_screen")
+
 }
