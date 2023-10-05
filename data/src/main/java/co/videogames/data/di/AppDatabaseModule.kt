@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import co.videogames.data.local.VideoJuegosDao
 import co.videogames.data.local.VideoJuegosDatabase
+import co.videogames.utilidades.AppConstants.NOMBRE_BASE_DATOS
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +23,7 @@ object AppDatabaseModule {
     ) = Room.databaseBuilder(
         context,
         VideoJuegosDatabase::class.java,
-        "VIDEO_JUEGOS"
+        NOMBRE_BASE_DATOS
     ).build()
 
 

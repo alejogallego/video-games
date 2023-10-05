@@ -3,8 +3,9 @@ package co.videogames.data.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import co.videogames.utilidades.AppConstants.NOMBRE_BASE_DATOS
 
-@Entity(tableName = "VIDEO_JUEGOS")
+@Entity(tableName = NOMBRE_BASE_DATOS)
 data class VideoJuegosEntity(
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id") var id: Int,
