@@ -10,26 +10,32 @@ import androidx.navigation.navArgument
 import co.videogames.core_ui.AppScreens
 import co.videogames.detalles.view.DetallesScreen
 import co.videogames.detalles.viewmodel.DetallesViewModel
+import co.videogames.favoritos.view.FavoritosScreen
+import co.videogames.favoritos.viewmodel.FavoritosVideoJuegosViewModel
 import co.videogames.inicio.view.SplashScreen
-import co.videogames.listado.view.ListScreen
-import co.videogames.listado.viewmodel.VideoJuegosViewModel
+import co.videogames.listado.view.ListadoScreen
+import co.videogames.listado.viewmodel.ListadoVideoJuegosViewModel
 
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    val videoGamesViewModel = hiltViewModel<VideoJuegosViewModel>()
+    val videoGamesViewModel = hiltViewModel<ListadoVideoJuegosViewModel>()
     val detallesViewModel = hiltViewModel<DetallesViewModel>()
+    val favoritosViewModel = hiltViewModel<FavoritosVideoJuegosViewModel>()
     NavHost(
         navController = navController,
-        startDestination = AppScreens.SplashScreen.route
+        startDestination = AppScreens.InicioScreen.route
     ) {
-        composable(route = AppScreens.SplashScreen.route) {
+        composable(route = AppScreens.InicioScreen.route) {
             SplashScreen(navController = navController)
         }
-        composable(route = AppScreens.ListScreen.route) {
-           ListScreen(navController = navController, viewModel = videoGamesViewModel)
+        composable(route = AppScreens.FavoritosScreen.route) {
+            FavoritosScreen(navController = navController, viewModel = favoritosViewModel)
         }
-        composable(route = "${AppScreens.DetailScreen.route}/{id}",
+        composable(route = AppScreens.ListadoScreen.route) {
+            ListadoScreen(navController = navController, viewModel = videoGamesViewModel)
+        }
+        composable(route = "${AppScreens.DetallesScreen.route}/{id}",
             arguments = listOf(
                 navArgument("id") { type = NavType.IntType }
             )

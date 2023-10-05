@@ -3,7 +3,7 @@ package co.videogames.listado.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.videogames.data.model.VideoGameState
-import co.videogames.data.remote.response.VideoGame
+import co.videogames.data.remote.response.VideoJuegos
 import co.videogames.listado.usecases.TraerTodosLosVideoJuegosUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
@@ -15,18 +15,18 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class VideoJuegosViewModel @Inject constructor(
+class ListadoVideoJuegosViewModel @Inject constructor(
     private val traerTodosLosVideoJuegosUseCase: TraerTodosLosVideoJuegosUseCase
 ) : ViewModel() {
 
-    private val _videoJuegos = MutableStateFlow<VideoGameState<List<VideoGame>>>(VideoGameState.Loading())
-    val videoJuegos: StateFlow<VideoGameState<List<VideoGame>>> = _videoJuegos
+    private val _videoJuegos = MutableStateFlow<VideoGameState<List<VideoJuegos>>>(VideoGameState.Loading())
+    val videoJuegos: StateFlow<VideoGameState<List<VideoJuegos>>> = _videoJuegos
 
     init {
-        getVideoGames()
+        traerTodosLosVideoJuegos()
     }
 
-    fun getVideoGames() {
+    private fun traerTodosLosVideoJuegos() {
         if (true) {
             viewModelScope.launch(IO) {
                 /** Este delay es solo para que puedan visualizar el loader */

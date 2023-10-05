@@ -3,7 +3,7 @@ package co.videogames.data.repository
 import android.util.Log
 import co.videogames.data.model.VideoGameState
 import co.videogames.data.remote.NetworkService
-import co.videogames.data.remote.response.VideoGame
+import co.videogames.data.remote.response.VideoJuegos
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -12,7 +12,7 @@ import javax.inject.Inject
 class TodosLosVideoJuegosRepositoryImpl @Inject constructor(
     private val networkService: NetworkService
 ) : TodosLosVideoJuegosRepository, DetalleDelVideoJuegoRepository {
-    override suspend fun traerTodosLosVideoJuegos(): Flow<VideoGameState<List<VideoGame>>> {
+    override suspend fun traerTodosLosVideoJuegos(): Flow<VideoGameState<List<VideoJuegos>>> {
         return flow {
             emit(VideoGameState.Loading())
 
@@ -29,7 +29,7 @@ class TodosLosVideoJuegosRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun traerDetalleDeVideoJuego(id:Int): Flow<VideoGameState<VideoGame>> {
+    override suspend fun traerDetalleDeVideoJuego(id:Int): Flow<VideoGameState<VideoJuegos>> {
         return flow {
             emit(VideoGameState.Loading())
 

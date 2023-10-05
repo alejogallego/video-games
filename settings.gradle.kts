@@ -22,6 +22,4 @@ include(":funcionalidades:inicio")
 include(":funcionalidades:listado")
 include(":funcionalidades:detalles")
 include(":funcionalidades:favoritos")
-
-
-
+include(":funcionalidades:principal")

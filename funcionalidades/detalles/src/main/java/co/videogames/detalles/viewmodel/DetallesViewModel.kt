@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.videogames.data.entity.VideoJuegosEntity
 import co.videogames.data.model.VideoGameState
-import co.videogames.data.remote.response.VideoGame
+import co.videogames.data.remote.response.VideoJuegos
 import co.videogames.detalles.usecases.GuardarVideoJuegoBaseDeDatos
 import co.videogames.detalles.usecases.TraerDetallesDelVideoJuegoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,8 +22,8 @@ class DetallesViewModel @Inject constructor(
     private val guardarVideoJuegoBaseDeDatos: GuardarVideoJuegoBaseDeDatos
 ) : ViewModel() {
 
-    private val _videoJuego = MutableStateFlow<VideoGameState<VideoGame>>(VideoGameState.Loading())
-    val videoJuego: StateFlow<VideoGameState<VideoGame>> = _videoJuego
+    private val _videoJuego = MutableStateFlow<VideoGameState<VideoJuegos>>(VideoGameState.Loading())
+    val videoJuego: StateFlow<VideoGameState<VideoJuegos>> = _videoJuego
 
     fun traerElDetalleDelVideoJuego(id: Int) {
         if (true) {
@@ -39,7 +39,7 @@ class DetallesViewModel @Inject constructor(
         }
     }
 
-    fun guardarVideoJuegoBaseDeDatos(resultado: VideoGame) {
+    fun guardarVideoJuegoBaseDeDatos(resultado: VideoJuegos) {
         val datos = VideoJuegosEntity(
             id = resultado.id,
             title = resultado.title,

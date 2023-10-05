@@ -2,6 +2,7 @@ package co.videogames.data.di
 
 import co.videogames.data.local.VideoJuegosDao
 import co.videogames.data.remote.NetworkService
+import co.videogames.data.repository.BaseDeDatosFavoritosRepository
 import co.videogames.data.repository.BaseDeDatosRepository
 import co.videogames.data.repository.BaseDeDatosRepositoryImpl
 import co.videogames.data.repository.DetalleDelVideoJuegoRepository
@@ -28,6 +29,12 @@ object RepositoryModule {
     fun instanciarDetalleDelVideoJuegoRepository(
         networkService: NetworkService
     ): DetalleDelVideoJuegoRepository = TodosLosVideoJuegosRepositoryImpl(networkService)
+
+    @Singleton
+    @Provides
+    fun instanciarBaseDeDatosFavoritosRepository(
+        videoJuegosDao: VideoJuegosDao
+    ): BaseDeDatosFavoritosRepository = BaseDeDatosRepositoryImpl(videoJuegosDao)
 
 
     @Singleton

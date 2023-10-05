@@ -11,12 +11,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import co.videogames.core_ui.AppScreens
 import co.videogames.data.model.VideoGameState
-import co.videogames.listado.viewmodel.VideoJuegosViewModel
+import co.videogames.listado.viewmodel.ListadoVideoJuegosViewModel
 
 @Composable
-fun ListScreen(
+fun ListadoScreen(
     navController: NavHostController,
-    viewModel: VideoJuegosViewModel
+    viewModel: ListadoVideoJuegosViewModel
 ) {
     val context = LocalContext.current
     val videoJuegos by viewModel.videoJuegos.collectAsState()
@@ -34,10 +34,10 @@ fun ListScreen(
             is VideoGameState.Success -> {
                 val resultado = videoJuegos.datos
                 if (resultado != null) {
-                    ListScreenContent(datos = resultado,
+                    ListadoScreenContent(datos = resultado,
                         onClickVideoGame = {id ->
                             navController.navigate(
-                                route = "${AppScreens.DetailScreen.route}/${id}",
+                                route = "${AppScreens.DetallesScreen.route}/${id}",
                             )
                         }
                     )

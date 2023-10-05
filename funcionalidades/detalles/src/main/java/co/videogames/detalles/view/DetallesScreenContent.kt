@@ -22,12 +22,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import co.videogames.data.remote.response.VideoGame
+import co.videogames.data.remote.response.VideoJuegos
 import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun DetallesScreenContent(
-    datos: VideoGame,
+    datos: VideoJuegos,
     onClickVideoGame: (id: Int) -> Unit = {}
 ) {
     Box(
